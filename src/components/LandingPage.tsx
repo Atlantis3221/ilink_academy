@@ -1,8 +1,17 @@
-import React from 'react';
-import Header from './Header';
+import React from "react";
+import styled from "styled-components";
+import Footer from "./Footer";
+import Header from "./Header";
 
-function LandingPage () {
-    return <Header />;
+const MainLayout = styled.div``;
+
+function LandingPage() {
+  return (
+    <MainLayout>
+      <Header />
+      <Footer />
+    </MainLayout>
+  );
 }
 
-export default LandingPage
+export default LandingPage;

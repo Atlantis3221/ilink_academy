@@ -26,8 +26,8 @@ const NameText = styled.p`
 `;
 
 const HeaderLogo = styled.img`
-    width: 86px;
-    height: 52px;
+  width: 86px;
+  height: 52px;
 `;
 
 const HeaderBtn = styled.button`
@@ -39,10 +39,10 @@ const HeaderBtn = styled.button`
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
 
   padding: 17px 28px;
-  
+
   cursor: pointer;
 `;
 
