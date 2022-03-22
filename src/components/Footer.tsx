@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import VkIcon from "../img/Vk_icon.png";
-import RedditIcon from "../img/Reddit_icon.png";
-import TgIcon from "../img/Tg_icon.png";
+import Vk from "../img/icons/Vk.svg";
+import Reddit from "../img/icons/Reddit.svg";
+import Tg from "../img/icons/Tg.svg";
+import SVG from "react-inlinesvg";
 
 const FooterContainer = styled.div`
   padding: 22px 80px;
@@ -24,8 +25,15 @@ const FooterIcons = styled.div`
   align-items: center;
 `;
 
-const FooterIcon = styled.img`
-  margin-left: 20px;
+const FooterIcon = styled.div`
+  & + & {
+    margin-left: 20px;
+  }
+  @media all and (max-width: 1024px) {
+    & + & {
+      margin-left: 10px;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -33,9 +41,15 @@ const Footer = () => {
     <FooterContainer>
       <FooterText>© iLINK ACADEMY. ALL RIGHTS RESERVED. 2022</FooterText>
       <FooterIcons>
-        <FooterIcon src={VkIcon} />
-        <FooterIcon src={RedditIcon} />
-        <FooterIcon src={TgIcon} />
+        <FooterIcon>
+          <SVG src={Vk} uniquifyIDs={true} />
+        </FooterIcon>
+        <FooterIcon>
+          <SVG src={Reddit} uniquifyIDs={true} />
+        </FooterIcon>
+        <FooterIcon>
+          <SVG src={Tg} uniquifyIDs={true} />
+        </FooterIcon>
       </FooterIcons>
     </FooterContainer>
   );

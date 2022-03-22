@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import Logo from "../img/HeaderLogo.png";
+import SVG from "react-inlinesvg";
+import Logo from "../img/HeaderLogo.svg";
+import Avatar from "../img/icons/Avatar.svg";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -12,32 +14,23 @@ const HeaderName = styled.div`
   display: flex;
 `;
 const NameImg = styled.div`
-  width: 52px;
-  height: 52px;
   margin-right: 20px;
-  background: #333333;
+  border: 1px solid black;
 `;
-const NameText = styled.p`
-  font-style: normal;
+
+const NameText = styled.div`
+  display: flex;
+  align-items: center;
   font-weight: 700;
-  font-size: 18px;
   line-height: 18px;
-  color: #333333;
 `;
 
-const HeaderLogo = styled.img`
-  width: 86px;
-  height: 52px;
-`;
-
-const HeaderBtn = styled.button`
+export const HeaderBtn = styled.button`
   background: #585cc6;
   border-radius: 2px;
   border: none;
 
-  font-style: normal;
   font-weight: 600;
-  font-size: 18px;
   line-height: 18px;
   color: #ffffff;
 
@@ -50,10 +43,12 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderName>
-        <NameImg />
+        <NameImg>
+          <SVG src={Avatar} />
+        </NameImg>
         <NameText>Степа Тугарев</NameText>
       </HeaderName>
-      <HeaderLogo src={Logo} />
+      <SVG src={Logo} />
       <HeaderBtn>Панель управления</HeaderBtn>
     </HeaderContainer>
   );
