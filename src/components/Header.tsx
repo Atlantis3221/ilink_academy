@@ -2,6 +2,7 @@ import styled from "styled-components";
 import SVG from "react-inlinesvg";
 import Logo from "../img/HeaderLogo.svg";
 import Avatar from "../img/icons/Avatar.svg";
+import { Btn } from "./Button"
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -25,20 +26,6 @@ const NameText = styled.div`
   line-height: 18px;
 `;
 
-export const HeaderBtn = styled.button`
-  background: #585cc6;
-  border-radius: 2px;
-  border: none;
-
-  font-weight: 600;
-  line-height: 18px;
-  color: #ffffff;
-
-  padding: 17px 28px;
-
-  cursor: pointer;
-`;
-
 const Header = () => {
   return (
     <HeaderContainer>
@@ -49,7 +36,7 @@ const Header = () => {
         <NameText>Степа Тугарев</NameText>
       </HeaderName>
       <SVG src={Logo} />
-      <HeaderBtn>Панель управления</HeaderBtn>
+      <Btn>Панель управления</Btn>
     </HeaderContainer>
   );
 };

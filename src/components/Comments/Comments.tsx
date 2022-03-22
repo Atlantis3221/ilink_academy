@@ -2,22 +2,25 @@ import SVG from "react-inlinesvg";
 import Cross from "../../img/icons/Cross.svg";
 import Comment1 from "../../img/Comment1.png";
 import Avatar from "../../img/icons/Avatar.svg";
+import LeftArrow from "../../img/icons/ArrowLeft.svg";
+import RightArrow from "../../img/icons/ArrowRight.svg";
 import {
   CommentsContainer,
   CommentsBlock,
   CommentsCaption,
   CaptionText,
-  CaptionBtn,
-  CrossIcon,
   CommentsBody,
   CommentBlock,
   CommentCaption,
-  AboutBlock,
+  CommentAutor,
   CommentAvatar,
   CommentName,
   CommentDate,
   CommentText,
+  CommentsArrows,
+  CommentsArrow,
 } from "./styled";
+import { Btn, CrossIcon } from "../Button";
 
 const Comments = () => {
   return (
@@ -25,20 +28,20 @@ const Comments = () => {
       <CommentsBlock>
         <CommentsCaption>
           <CaptionText>Отзывы</CaptionText>
-          <CaptionBtn>
+          <Btn>
             <CrossIcon>
               <SVG src={Cross} />
             </CrossIcon>
             Добавь отзыв
-          </CaptionBtn>
+          </Btn>
         </CommentsCaption>
         <CommentsBody>
           <CommentBlock>
             <CommentCaption>
-              <AboutBlock>
+              <CommentAutor>
                 <CommentAvatar src={Comment1} />
                 <CommentName>Буба Бубенцов</CommentName>
-              </AboutBlock>
+              </CommentAutor>
               <CommentDate>08.01.2022</CommentDate>
             </CommentCaption>
             <CommentText>
@@ -53,10 +56,10 @@ const Comments = () => {
           </CommentBlock>
           <CommentBlock>
             <CommentCaption>
-              <AboutBlock>
+              <CommentAutor>
                 <CommentAvatar src={Avatar} />
                 <CommentName>Илья Анташкевич</CommentName>
-              </AboutBlock>
+              </CommentAutor>
               <CommentDate>08.01.2022</CommentDate>
             </CommentCaption>
             <CommentText>
@@ -69,6 +72,14 @@ const Comments = () => {
           </CommentBlock>
         </CommentsBody>
       </CommentsBlock>
+      <CommentsArrows>
+        <CommentsArrow>
+          <SVG src={LeftArrow} />
+        </CommentsArrow>
+        <CommentsArrow>
+          <SVG src={RightArrow} />
+        </CommentsArrow>
+      </CommentsArrows>
     </CommentsContainer>
   );
 };
