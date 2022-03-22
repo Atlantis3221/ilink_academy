@@ -3,6 +3,7 @@ import Vk from "../img/icons/Vk.svg";
 import Reddit from "../img/icons/Reddit.svg";
 import Tg from "../img/icons/Tg.svg";
 import SVG from "react-inlinesvg";
+import { SvgWrapper } from "./SvgWrapper";
 
 const FooterContainer = styled.div`
   padding: 22px 80px;
@@ -25,10 +26,11 @@ const FooterIcons = styled.div`
   align-items: center;
 `;
 
-const FooterIcon = styled.div`
+const FooterIcon = styled(SvgWrapper)`
   & + & {
     margin-left: 20px;
   }
+  
   @media all and (max-width: 1024px) {
     & + & {
       margin-left: 10px;

@@ -20,21 +20,27 @@ import {
   CommentsArrows,
   CommentsArrow,
 } from "./styled";
-import { Btn, CrossIcon } from "../Button";
+import { CustomButton, CrossIcon, ButtonLabel } from "../Button";
+import { SvgWrapper } from "../SvgWrapper";
+import { useModalContext } from "../../context/ModalContext";
 
 const Comments = () => {
+  const { handleOpen } = useModalContext();
+  
   return (
     <CommentsContainer>
       <CommentsBlock>
         <CommentsCaption>
           <CaptionText>Отзывы</CaptionText>
-          <Btn>
+
+          <CustomButton onClick={handleOpen}>
             <CrossIcon>
               <SVG src={Cross} />
             </CrossIcon>
-            Добавь отзыв
-          </Btn>
+            <ButtonLabel>Добавить отзыв</ButtonLabel>
+          </CustomButton>
         </CommentsCaption>
+
         <CommentsBody>
           <CommentBlock>
             <CommentCaption>
@@ -74,10 +80,15 @@ const Comments = () => {
       </CommentsBlock>
       <CommentsArrows>
         <CommentsArrow>
-          <SVG src={LeftArrow} />
+          <SvgWrapper>
+            <SVG src={LeftArrow} />
+          </SvgWrapper>
         </CommentsArrow>
+
         <CommentsArrow>
-          <SVG src={RightArrow} />
+          <SvgWrapper>
+            <SVG src={RightArrow} />
+          </SvgWrapper>
         </CommentsArrow>
       </CommentsArrows>
     </CommentsContainer>

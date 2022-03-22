@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { SvgWrapper } from "./SvgWrapper";
 
-export const Btn = styled.button`
+export const CustomButton = styled.button`
   display: flex;
   background: #585cc6;
   border-radius: 2px;
@@ -15,10 +16,12 @@ export const Btn = styled.button`
   cursor: pointer;
 `;
 
-export const CrossIcon = styled.div`
+
+export const CrossIcon = styled(SvgWrapper)`
   margin-right: 10px;
 `;
 
-export const BtnText = styled.p`
+export const ButtonLabel = styled.p`
   margin: 0;
+  white-space: nowrap;
 `;

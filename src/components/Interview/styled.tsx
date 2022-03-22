@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SvgWrapper } from "../SvgWrapper";
 
 export const InterviewCaption = styled.h1`
   margin: 0 0 88px 0;
@@ -43,7 +44,7 @@ export const InfoText = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-export const InfoIcon = styled.div`
+export const InfoIcon = styled(SvgWrapper)`
   margin-left: 10px;
   display: flex;
   align-items: center;
@@ -73,7 +74,7 @@ export const SeverLink = styled.a`
 export const AnimalBlock = styled.div`
   display: flex;
 `;
-export const AnimalIcon = styled.div`
+export const AnimalIcon = styled(SvgWrapper)`
   display: flex;
   align-items: center;
   margin-right: 10px;

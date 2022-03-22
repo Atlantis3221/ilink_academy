@@ -2,7 +2,8 @@ import styled from "styled-components";
 import SVG from "react-inlinesvg";
 import Logo from "../img/HeaderLogo.svg";
 import Avatar from "../img/icons/Avatar.svg";
-import { Btn } from "./Button"
+import { CustomButton } from "./Button";
+import { SvgWrapper } from "./SvgWrapper";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -14,7 +15,8 @@ const HeaderContainer = styled.div`
 const HeaderName = styled.div`
   display: flex;
 `;
-const NameImg = styled.div`
+const NameImg = styled(SvgWrapper)`
+  display: flex;
   margin-right: 20px;
   border: 1px solid black;
 `;
@@ -36,7 +38,7 @@ const Header = () => {
         <NameText>Степа Тугарев</NameText>
       </HeaderName>
       <SVG src={Logo} />
-      <Btn>Панель управления</Btn>
+      <CustomButton>Панель управления</CustomButton>
     </HeaderContainer>
   );
 };
