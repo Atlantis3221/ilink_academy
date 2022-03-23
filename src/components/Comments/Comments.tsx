@@ -26,7 +26,7 @@ import { useModalContext } from "../../context/ModalContext";
 
 const Comments = () => {
   const { handleOpen } = useModalContext();
-  
+
   return (
     <CommentsContainer>
       <CommentsBlock>

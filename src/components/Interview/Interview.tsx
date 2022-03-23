@@ -1,4 +1,4 @@
-import Photo from "../../img/InterviewPhoto.png";
+import Photo from "../../img/cARL.jpg";
 import SVG from "react-inlinesvg";
 import Man from "../../img/icons/Gachi.svg";
 import Bowl from "../../img/icons/Bowl.svg";
@@ -58,7 +58,7 @@ const Interview = () => {
           </InfoBlock>
           <AboutBlock>
             <AboutMe>
-              <b>О себе:</b> Всем привет! Меня зовут Степа, мне 23 года,бывший
+              <b>О себе:</b> Всем привет! Меня зовут Степа, мне 23 года, бывший
               физик, занимаюсь гиревым спортом и снимаю видосы в экстремистский
               инстаграм. Занимаюсь фронтендом с ментором уже пол года и за это
               время смог поучаствовать в крутом проекте по расписанию автобусов

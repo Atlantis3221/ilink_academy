@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
 import Body from "./Body";
-import Form from "./Form";
+import Form from "./Form/Form";
 import { useModalContext } from "../context/ModalContext";
 
 const Global = styled.div`
@@ -26,10 +26,10 @@ const AbsoluteWrapper = styled.div`
 `;
 
 function LandingPage() {
-  const { isModalOpen } = useModalContext();
+  const { isModalOpen, handleClose } = useModalContext();
 
   return (
-    <Global>
+    <Global onClick={handleClose}>
       <MainLayout isModalOpen={isModalOpen}>
         <Header />
         <Body />

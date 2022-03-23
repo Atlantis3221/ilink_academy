@@ -1,83 +1,23 @@
-import styled from "styled-components";
 import SVG from "react-inlinesvg";
-import Cross from "../img/icons/FormCross.svg";
-import { CustomButton, CrossIcon, ButtonLabel } from "./Button";
-import Plus from "../img/icons/Cross.svg";
-import { SvgWrapper } from "./SvgWrapper";
-import { FactorA } from "./FactorA";
-import { useModalContext } from "../context/ModalContext";
+import Cross from "../../img/icons/FormCross.svg";
+import { CustomButton, CrossIcon, ButtonLabel } from "../Button";
+import Plus from "../../img/icons/Cross.svg";
+import { FactorA } from "../FactorA";
+import { useModalContext } from "../../context/ModalContext";
 import { useState } from "react";
+import {
+  FormContainer,
+  FormCaption,
+  FormCross,
+  Row,
+  AutorCaption,
+  AutorBody,
+  InputWrapper,
+  AutorInput,
+  FormErrorLabel,
+  OpinionInput,
+} from "./styled";
 
-const FormContainer = styled.form``;
-
-const FormCaption = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 500;
-  margin-bottom: 20px;
-`;
-
-const FormCross = styled(SvgWrapper)`
-  cursor: pointer;
-`;
-
-const Row = styled.div`
-  margin-bottom: 32px;
-`;
-
-const AutorCaption = styled(FactorA)`
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-  margin-bottom: 14px;
-`;
-
-const AutorBody = styled.div`
-  display: flex;
-`;
-
-const AutorInput = styled.input`
-  padding: 15px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-  margin-right: 16px;
-  width: 100%;
-`;
-
-const FormOpinion = styled.div`
-  margin-bottom: 40px;
-`;
-
-const OpinionInput = styled.textarea`
-  padding: 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 2px;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-
-  width: 100%;
-`;
-
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-const FormErrorLabel = styled.span`
-  position: absolute;
-  bottom: -20px;
-  left: 2px;
-  color: red;
-`;
 interface IFormData {
   name: string;
   description: string;
@@ -123,7 +63,7 @@ const Form = () => {
   };
 
   const handleFileLoad = (event: any) => {
-    console.log(event.target.files[0].name)
+    console.log(event.target.files[0].name);
   };
 
   return (

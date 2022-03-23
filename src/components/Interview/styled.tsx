@@ -14,6 +14,8 @@ export const InterviewContainer = styled.div`
 `;
 export const InterviewPhoto = styled.img`
   margin-top: 30px;
+  height: 383px;
+  width: 519px;
 `;
 export const InterviewTextBlock = styled.div`
   padding: 40px;
