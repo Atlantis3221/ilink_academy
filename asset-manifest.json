@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/ilink_academy/static/css/main.d96a97e8.css",
+    "main.js": "/ilink_academy/static/js/main.032e4030.js",
+    "static/js/787.cf83aa59.chunk.js": "/ilink_academy/static/js/787.cf83aa59.chunk.js",
+    "static/media/cARL.jpg": "/ilink_academy/static/media/cARL.4faab9c114e19d47772b.jpg",
+    "static/media/Gilroy-RegularItalic.ttf": "/ilink_academy/static/media/Gilroy-RegularItalic.5f3ed3d83ee07d26cfdf.ttf",
+    "static/media/Gilroy-Light.ttf": "/ilink_academy/static/media/Gilroy-Light.0ac7c2f9cb59ea1ba11c.ttf",
+    "static/media/Gilroy-Regular.ttf": "/ilink_academy/static/media/Gilroy-Regular.fa652e766b6a85a1f9cb.ttf",
+    "static/media/FactorAMedium-Regular.ttf": "/ilink_academy/static/media/FactorAMedium-Regular.1a1b89bd931afe1bfa27.ttf",
+    "static/media/FactorA-Bold.ttf": "/ilink_academy/static/media/FactorA-Bold.f8635ab95fce0b26ef5d.ttf",
+    "static/media/HeaderLogo.svg": "/ilink_academy/static/media/HeaderLogo.8597b08c701c69b21103b177957510b9.svg",
+    "static/media/Bowl.svg": "/ilink_academy/static/media/Bowl.b5bd6c658c6e2e64eea1eefb51fbaeb6.svg",
+    "static/media/Reddit.svg": "/ilink_academy/static/media/Reddit.e3b7a7cf7252c04f8c46702e611f6514.svg",
+    "static/media/Vk.svg": "/ilink_academy/static/media/Vk.e815ae5694255138622b0c44f1e66ae2.svg",
+    "static/media/Avatar.svg": "/ilink_academy/static/media/Avatar.7b0f941d418db35607c85fc2048bad00.svg",
+    "static/media/Tg.svg": "/ilink_academy/static/media/Tg.b8fd1941c596bfd5fd3064a5e49e64ef.svg",
+    "static/media/Gachi.svg": "/ilink_academy/static/media/Gachi.d0e52b69022f92362a5996b5adfa1bcf.svg",
+    "index.html": "/ilink_academy/index.html",
+    "static/media/ArrowRight.svg": "/ilink_academy/static/media/ArrowRight.c9d0fa7897dcae97434f1fb7e473268c.svg",
+    "static/media/ArrowLeft.svg": "/ilink_academy/static/media/ArrowLeft.21a457cfe6d4de807e8ec45280eec8e6.svg",
+    "static/media/FormCross.svg": "/ilink_academy/static/media/FormCross.0a6d746297ea3e8a802ee16d35ff208a.svg",
+    "static/media/Cross.svg": "/ilink_academy/static/media/Cross.184e67f026c5dbefe16a1eae3dfdb9bb.svg",
+    "main.d96a97e8.css.map": "/ilink_academy/static/css/main.d96a97e8.css.map",
+    "main.032e4030.js.map": "/ilink_academy/static/js/main.032e4030.js.map",
+    "787.cf83aa59.chunk.js.map": "/ilink_academy/static/js/787.cf83aa59.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d96a97e8.css",
+    "static/js/main.032e4030.js"
+  ]
+}
