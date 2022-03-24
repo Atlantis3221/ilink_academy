@@ -54,7 +54,7 @@ const MessageWrapper = styled.div`
   position: relative;
 `;
 
-const MessageSuccess: React.FC<any> = ({ handleClose, type }) => {
+const Message: React.FC<any> = ({ handleClose, type }) => {
   const message =
     type === "error"
       ? "Не получилось отправить отзыв. Попробуйте еще раз!"
@@ -84,4 +84,4 @@ const MessageSuccess: React.FC<any> = ({ handleClose, type }) => {
   );
 };
 
-export default MessageSuccess;
+export default Message;

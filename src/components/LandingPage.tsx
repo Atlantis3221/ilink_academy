@@ -10,7 +10,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Body from "./Body";
 import Form from "./Form/Form";
-import MessageSuccess from "./MessageSuccess";
+import Message from "./Message";
 
 const Global = styled.div`
   position: relative;
@@ -79,7 +79,7 @@ function LandingPage() {
 
       {notificationType.length !== 0 && (
         <NotificationWrapper>
-          <MessageSuccess
+          <Message
             type={notificationType}
             handleClose={handleCloseNotification}
           />
