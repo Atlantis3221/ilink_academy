@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ilink_academy/static/css/main.3bc23e1b.css",
-    "main.js": "/ilink_academy/static/js/main.d580930d.js",
+    "main.js": "/ilink_academy/static/js/main.d826aef1.js",
     "static/js/787.cf83aa59.chunk.js": "/ilink_academy/static/js/787.cf83aa59.chunk.js",
     "static/media/cARL.jpg": "/ilink_academy/static/media/cARL.4faab9c114e19d47772b.jpg",
     "static/media/Gilroy-RegularItalic.ttf": "/ilink_academy/static/media/Gilroy-RegularItalic.5f3ed3d83ee07d26cfdf.ttf",
@@ -32,11 +32,11 @@
     "static/media/MessageCross.svg": "/ilink_academy/static/media/MessageCross.7ccd0c452fb9fc89230873f28e698a0c.svg",
     "static/media/Cross.svg": "/ilink_academy/static/media/Cross.0ad3f717b002db5b2489c4ffb3012c12.svg",
     "main.3bc23e1b.css.map": "/ilink_academy/static/css/main.3bc23e1b.css.map",
-    "main.d580930d.js.map": "/ilink_academy/static/js/main.d580930d.js.map",
+    "main.d826aef1.js.map": "/ilink_academy/static/js/main.d826aef1.js.map",
     "787.cf83aa59.chunk.js.map": "/ilink_academy/static/js/787.cf83aa59.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bc23e1b.css",
-    "static/js/main.d580930d.js"
+    "static/js/main.d826aef1.js"
   ]
 }
