@@ -23,13 +23,23 @@ const AbsoluteWrapper = styled.div`
   background: #ffffff;
 
   width: 676px;
+  z-index: 1;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 `;
 
 function LandingPage() {
   const { isModalOpen, handleClose } = useModalContext();
 
   return (
-    <Global onClick={handleClose}>
+    <Global>
       <MainLayout isModalOpen={isModalOpen}>
         <Header />
         <Body />
@@ -41,6 +51,7 @@ function LandingPage() {
           <Form />
         </AbsoluteWrapper>
       )}
+      {isModalOpen && <Overlay onClick={handleClose} />}
     </Global>
   );
 }

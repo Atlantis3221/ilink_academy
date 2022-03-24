@@ -4,7 +4,7 @@ import { CustomButton, CrossIcon, ButtonLabel } from "../Button";
 import Plus from "../../img/icons/Cross.svg";
 import { FactorA } from "../FactorA";
 import { useModalContext } from "../../context/ModalContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FormContainer,
   FormCaption,
@@ -16,7 +16,9 @@ import {
   AutorInput,
   FormErrorLabel,
   OpinionInput,
+  Count,
 } from "./styled";
+import FileUpload from "../FileUpload";
 
 interface IFormData {
   name: string;
@@ -24,23 +26,35 @@ interface IFormData {
 }
 
 const validator = (formData: IFormData) => {
+  const descriptionValidator = () => {
+      if(formData.description.length === 0) return  "это поле обязательное"
+      if(formData.description.length > 200) return "максимум 200 символов"
+      return ""
+  }
+  const nameValidator = () => {
+      if(formData.name.length === 0) return  "это поле обязательное"
+      return ""
+  }
+
   return {
-    name: formData.name.length !== 0 ? "" : "это поле обязательное",
-    description:
-      formData.description.length !== 0 ? "" : "это поле обязательное",
+    name: nameValidator(),
+    description: descriptionValidator()
   };
 };
 
+const DEFAULT_FORM_DATA = {
+  name: "",
+  description: "",
+}
+
 const Form = () => {
   const { handleClose } = useModalContext();
-  const [formData, setFormData] = useState<IFormData>({
-    name: "",
-    description: "",
-  });
+  const [formData, setFormData] = useState<IFormData>(DEFAULT_FORM_DATA);
   const [formError, setFormError] = useState<IFormData>({
     name: "",
     description: "",
   });
+  const [fileName, setFileName] = useState("")
 
   const handleChange = (e: any) => {
     setFormData((prev) => ({
@@ -60,10 +74,11 @@ const Form = () => {
 
     handleClose();
     alert(`${formData.name} - ${formData.description}`);
+    setFormData(DEFAULT_FORM_DATA)
   };
 
   const handleFileLoad = (event: any) => {
-    console.log(event.target.files[0].name);
+    setFileName(event.target.files[0].name);
   };
 
   return (
@@ -96,12 +111,14 @@ const Form = () => {
             <CrossIcon>
               <SVG src={Plus} />
             </CrossIcon>
-
-            <input type="file" onChange={handleFileLoad} />
           </CustomButton>
         </AutorBody>
       </Row>
 
+      <input type="file" onChange={handleFileLoad} />
+
+      <FileUpload fileName={fileName} />
+      
       <Row>
         <AutorCaption>Все ли вам понравилось?</AutorCaption>
 
@@ -115,6 +132,7 @@ const Form = () => {
           {formError?.description.length !== 0 && (
             <FormErrorLabel>{formError.description}</FormErrorLabel>
           )}
+          <Count>{formData.description.length}/200</Count>
         </InputWrapper>
       </Row>
 

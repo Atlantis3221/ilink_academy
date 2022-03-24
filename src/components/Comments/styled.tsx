@@ -13,6 +13,7 @@ export const CommentsArrows = styled.div`
 `
 
 export const CommentsArrow = styled.button`
+cursor: pointer;
   padding: 16px;
   background: #ffffff;
   border: none;

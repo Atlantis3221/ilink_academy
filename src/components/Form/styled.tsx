@@ -62,3 +62,10 @@ export const FormErrorLabel = styled.span`
   left: 2px;
   color: red;
 `;
+
+
+export const Count = styled.span`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+`
