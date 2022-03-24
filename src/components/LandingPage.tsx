@@ -1,13 +1,16 @@
+import SVG from "react-inlinesvg";
 import styled from "styled-components";
+
+import { useModalContext } from "../context/ModalContext";
+import { useNotificationContext } from "../context/NotificationContext";
+
+import BodyVector from "../img/BodyVector.svg";
+
 import Footer from "./Footer";
 import Header from "./Header";
 import Body from "./Body";
 import Form from "./Form/Form";
-import { useModalContext } from "../context/ModalContext";
 import MessageSuccess from "./MessageSuccess";
-import MessageError from "./MessageError";
-import SVG from "react-inlinesvg";
-import BodyVector from "../img/BodyVector.svg"
 
 const Global = styled.div`
   position: relative;
@@ -22,7 +25,7 @@ const LayoutVector = styled.div`
   position: absolute;
   top: -256px;
   left: 839px;
-`
+`;
 
 const AbsoluteWrapper = styled.div`
   position: fixed;
@@ -35,6 +38,11 @@ const AbsoluteWrapper = styled.div`
   width: 676px;
   z-index: 1;
 `;
+const NotificationWrapper = styled.div`
+  position: fixed;
+  right: 40px;
+  bottom: 104px;
+`;
 
 const Overlay = styled.div`
   position: absolute;
@@ -43,20 +51,23 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: rgba(0, 0, 0, 0.2);
 `;
 
 function LandingPage() {
   const { isModalOpen, handleClose } = useModalContext();
+  const { notificationType, handleClose: handleCloseNotification } =
+    useNotificationContext();
 
   return (
     <Global>
       <MainLayout isModalOpen={isModalOpen}>
         <Header />
         <Body />
-        <MessageSuccess />
-        <MessageError />
         <Footer />
-        <LayoutVector><SVG src={BodyVector}/></LayoutVector>
+        <LayoutVector>
+          <SVG src={BodyVector} />
+        </LayoutVector>
       </MainLayout>
 
       {isModalOpen && (
@@ -65,6 +76,15 @@ function LandingPage() {
         </AbsoluteWrapper>
       )}
       {isModalOpen && <Overlay onClick={handleClose} />}
+
+      {notificationType.length !== 0 && (
+        <NotificationWrapper>
+          <MessageSuccess
+            type={notificationType}
+            handleClose={handleCloseNotification}
+          />
+        </NotificationWrapper>
+      )}
     </Global>
   );
 }

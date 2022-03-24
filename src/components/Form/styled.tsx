@@ -48,6 +48,8 @@ export const OpinionInput = styled.textarea`
   font-weight: 500;
 
   width: 100%;
+
+  resize: none;
 `;
 export const InputWrapper = styled.div`
   position: relative;

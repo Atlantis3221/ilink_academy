@@ -26,6 +26,7 @@ import {
 } from "./styled";
 import FileUpload from "../FileUpload";
 import { SvgWrapper } from "../SvgWrapper";
+import { useNotificationContext } from "../../context/NotificationContext";
 
 interface IFormData {
   name: string;
@@ -55,14 +56,15 @@ const DEFAULT_FORM_DATA = {
 };
 
 const Form = () => {
-  const { handleClose } = useModalContext();
-  const [isFileLoaded, setIsFileLoaded] = useState(true);
   const [formData, setFormData] = useState<IFormData>(DEFAULT_FORM_DATA);
   const [formError, setFormError] = useState<IFormData>({
     name: "",
     description: "",
   });
   const [fileName, setFileName] = useState("");
+
+  const { handleClose } = useModalContext();
+  const { handleOpen } = useNotificationContext();
 
   const handleChange = (e: any) => {
     setFormData((prev) => ({
@@ -76,21 +78,22 @@ const Form = () => {
 
     const errors = validator(formData);
 
+    handleOpen("error");
     setFormError(errors);
 
     if (errors.name.length !== 0 || errors.description.length !== 0) return;
 
     handleClose();
-    alert(`${formData.name} - ${formData.description}`);
+    alert(
+      `name: ${formData.name}\ndescription: ${formData.description}\nfilename: ${fileName}`
+    );
     setFormData(DEFAULT_FORM_DATA);
+
+    handleOpen("success");
   };
 
   const handleFileLoad = (event: any) => {
     setFileName(event.target.files[0].name);
-    console.log(fileName.length);
-    // if (fileName.length > 0) {
-    //   setIsFileLoaded(true);
-    // }
   };
 
   return (
@@ -154,7 +157,7 @@ const Form = () => {
 
         <FooterIconWrapper>
           <SvgWrapper>
-          <SVG src={Info} />
+            <SVG src={Info} />
           </SvgWrapper>
         </FooterIconWrapper>
 
@@ -162,7 +165,6 @@ const Form = () => {
           Все отзывы проходят модерацию в течение 2 часов
         </FormFooterText>
       </FormFooter>
-
     </FormContainer>
   );
 };
