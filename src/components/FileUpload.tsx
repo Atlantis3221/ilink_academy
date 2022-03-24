@@ -14,8 +14,7 @@ const FileName = styled.div`
   font-size: 14px;
   line-height: 18px;
   background: #F5F5F5;
-  border-radius: 2px;
-  
+  border-radius: 2px;  
 `;
 
 const TextWrapper = styled.p`
@@ -24,11 +23,13 @@ const TextWrapper = styled.p`
 
 const FileUpload: React.FC<{ fileName: string }> = ({ fileName }) => {
   return (
+    <div>
     <FileName>
       <SVG src={Jpg} />
       <TextWrapper>{fileName}</TextWrapper>
       <SVG src={Delete}/>
     </FileName>
+    </div>
   );
 };
 

@@ -25,6 +25,7 @@ import {
   FormFooterText,
 } from "./styled";
 import FileUpload from "../FileUpload";
+import { SvgWrapper } from "../SvgWrapper";
 
 interface IFormData {
   name: string;
@@ -126,7 +127,7 @@ const Form = () => {
             <p>Загрузить фото</p>
           </InputLabel>
         </AutorBody>
-        {isFileLoaded && <FileUpload fileName={fileName} />}
+        {fileName && <FileUpload fileName={fileName} />}
       </Row>
 
       <Row>
@@ -152,14 +153,16 @@ const Form = () => {
         </CustomButton>
 
         <FooterIconWrapper>
+          <SvgWrapper>
           <SVG src={Info} />
+          </SvgWrapper>
         </FooterIconWrapper>
 
         <FormFooterText>
           Все отзывы проходят модерацию в течение 2 часов
         </FormFooterText>
       </FormFooter>
-      
+
     </FormContainer>
   );
 };

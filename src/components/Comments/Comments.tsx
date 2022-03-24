@@ -1,11 +1,12 @@
 import SVG from "react-inlinesvg";
 import Cross from "../../img/icons/Cross.svg";
 import Comment1 from "../../img/Comment1.png";
-import Comment3 from "../../img/Comment3.png"
-import Comment4 from "../../img/Comment4.png"
+import Comment3 from "../../img/Comment3.png";
+import Comment4 from "../../img/Comment4.png";
 import Avatar from "../../img/icons/Avatar.svg";
 import LeftArrow from "../../img/icons/ArrowLeft.svg";
 import RightArrow from "../../img/icons/ArrowRight.svg";
+import { FactorA } from "../FactorA";
 import {
   CommentsContainer,
   CommentsBlock,
@@ -76,7 +77,9 @@ const ReviewItem: React.FC<any> = ({ name, date, description, img }) => {
       <CommentCaption>
         <CommentAutor>
           <CommentAvatar src={img} />
-          <CommentName>{name}</CommentName>
+          <FactorA>
+            <CommentName>{name}</CommentName>
+          </FactorA>
         </CommentAutor>
         <CommentDate>{date}</CommentDate>
       </CommentCaption>
@@ -121,7 +124,9 @@ const Comments = () => {
     <CommentsContainer>
       <CommentsBlock>
         <CommentsCaption>
-          <CaptionText>Отзывы</CaptionText>
+          <FactorA>
+            <CaptionText>Отзывы</CaptionText>
+          </FactorA>
 
           <CustomButton onClick={handleOpen}>
             <CrossIcon>

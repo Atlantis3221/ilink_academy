@@ -7,6 +7,7 @@ export const CustomButton = styled.button`
   border-radius: 2px;
   border: none;
 
+  font-family: "Gilroy";
   font-weight: 600;
   line-height: 18px;
   color: #ffffff;

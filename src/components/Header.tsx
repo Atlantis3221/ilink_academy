@@ -24,7 +24,9 @@ const NameImg = styled(SvgWrapper)`
 const NameText = styled.div`
   display: flex;
   align-items: center;
+  font-family: "Gilroy";
   font-weight: 700;
+  font-size: 18px;
   line-height: 18px;
 `;
 

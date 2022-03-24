@@ -21,19 +21,24 @@ import {
   AnimalIcon,
   AnimalText,
 } from "./styled";
+import { FactorA } from "../FactorA";
 
 const Interview = () => {
   return (
     <div>
       <InterviewCaption>
-        Добро пожаловать
-        <br /> в академию!
+        <FactorA>
+          Добро пожаловать
+          <br /> в академию!
+        </FactorA>
       </InterviewCaption>
       <InterviewContainer>
         <InterviewPhoto src={Photo} />
         <InterviewTextBlock>
           <TextCaptionBlock>
-            <CaptionText>Степа Тугарев</CaptionText>
+            <FactorA>
+              <CaptionText>Степа Тугарев</CaptionText>
+            </FactorA>
             <CaptionBirth>29.10.1998</CaptionBirth>
           </TextCaptionBlock>
           <InfoBlock>

@@ -42,6 +42,7 @@ export const OpinionInput = styled.textarea`
   padding: 12px;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
+  font-family: "Gilroy";
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -101,7 +102,7 @@ export const FooterIconWrapper = styled.div`
   margin-right: 10px;
 `
 
-export const FormFooterText = styled.p`
+export const FormFooterText = styled.div`
   font-family: "Gilroy";
   font-size: 12px;
   line-height: 16px;

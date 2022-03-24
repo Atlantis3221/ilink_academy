@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import SVG from "react-inlinesvg";
-import SuccessBubbles from "../img/icons/GreenBubbles.svg";
+import FailBubbles from "../img/icons/RedBubbles.svg";
 import { FactorA } from "./FactorA";
-import SuccessIcon from "../img/icons/Success.svg";
+import FailIcon from "../img/icons/Fail.svg";
 import Cross from "../img/icons/MessageCross.svg";
 
 const MessageBody = styled.div`
   max-width: 438px;
   position: relative;
   padding: 16px 64px 23px 130px;
-  color: #333333;
-  background: rgba(181, 255, 162, 1);
+  color: #ffffff;
+  background: rgba(246, 75, 60, 1);
   border-radius: 32px;
 `;
 const MessageCross = styled.div`
@@ -21,7 +21,7 @@ const MessageCross = styled.div`
 const SuccessBubble = styled.div`
   position: absolute;
   left: 0;
-  top: 42px;
+  top: 30px;
 `;
 const SuccessIconWrapper = styled.div`
   position: absolute;
@@ -39,18 +39,20 @@ const MessageComment = styled.div`
   line-height: 22px;
 `;
 
-const MessageSuccess = () => {
+const MessageError = () => {
   return (
     <MessageBody>
       <FactorA>
-        <MessageCaption>Успешно!</MessageCaption>
+        <MessageCaption>Что-то не так...</MessageCaption>
       </FactorA>
-      <MessageComment>Спасибо за отзыв о нашей компании:)</MessageComment>
+      <MessageComment>
+        Не получилось отправить отзыв. Попробуйте еще раз!
+      </MessageComment>
       <SuccessBubble>
-        <SVG src={SuccessBubbles} />
+        <SVG src={FailBubbles} />
       </SuccessBubble>
       <SuccessIconWrapper>
-        <SVG src={SuccessIcon} />
+        <SVG src={FailIcon} />
       </SuccessIconWrapper>
       <MessageCross>
         <SVG src={Cross} />
@@ -59,4 +61,4 @@ const MessageSuccess = () => {
   );
 };
 
-export default MessageSuccess;
+export default MessageError;

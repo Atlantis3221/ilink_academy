@@ -7,13 +7,12 @@ export const CommentsContainer = styled.div`
 `;
 
 export const CommentsArrows = styled.div`
-  margin-right: 160px;
   margin-left: 34px;
   display: flex;
-`
+`;
 
 export const CommentsArrow = styled.button`
-cursor: pointer;
+  cursor: pointer;
   padding: 16px;
   background: #ffffff;
   border: none;
@@ -21,7 +20,7 @@ cursor: pointer;
   & + & {
     margin-left: 16px;
   }
-`
+`;
 
 export const CommentsBlock = styled.div`
   padding: 56px 56px 64px 80px;
@@ -38,7 +37,6 @@ export const CaptionText = styled.h1`
   line-height: 88px;
   font-weight: 500;
 `;
-
 
 export const CommentsBody = styled.div`
   margin-top: 38px;

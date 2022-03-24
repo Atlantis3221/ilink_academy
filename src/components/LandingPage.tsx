@@ -5,6 +5,9 @@ import Body from "./Body";
 import Form from "./Form/Form";
 import { useModalContext } from "../context/ModalContext";
 import MessageSuccess from "./MessageSuccess";
+import MessageError from "./MessageError";
+import SVG from "react-inlinesvg";
+import BodyVector from "../img/BodyVector.svg"
 
 const Global = styled.div`
   position: relative;
@@ -14,6 +17,12 @@ const MainLayout = styled.div<{ isModalOpen: boolean }>`
   position: relative;
   filter: ${(props) => (props.isModalOpen ? "blur(8px)" : "unset")};
 `;
+
+const LayoutVector = styled.div`
+  position: absolute;
+  top: -256px;
+  left: 839px;
+`
 
 const AbsoluteWrapper = styled.div`
   position: fixed;
@@ -45,7 +54,9 @@ function LandingPage() {
         <Header />
         <Body />
         <MessageSuccess />
+        <MessageError />
         <Footer />
+        <LayoutVector><SVG src={BodyVector}/></LayoutVector>
       </MainLayout>
 
       {isModalOpen && (
