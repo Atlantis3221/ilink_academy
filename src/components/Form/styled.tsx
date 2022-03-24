@@ -26,6 +26,7 @@ export const AutorCaption = styled(FactorA)`
 `;
 export const AutorBody = styled.div`
   display: flex;
+  margin-bottom: 10px;
 `;
 export const AutorInput = styled.input`
   padding: 15px 12px;
@@ -36,9 +37,6 @@ export const AutorInput = styled.input`
   font-weight: 500;
   margin-right: 16px;
   width: 100%;
-`;
-const FormOpinion = styled.div`
-  margin-bottom: 40px;
 `;
 export const OpinionInput = styled.textarea`
   padding: 12px;
@@ -63,9 +61,49 @@ export const FormErrorLabel = styled.span`
   color: red;
 `;
 
-
 export const Count = styled.span`
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 4px;
+  bottom: 4px;
+
+  font-family: "Gilroy";
+  font-size: 10px;
+  line-height: 14px;
+  color: #8A8A8A;
+`;
+export const InputLabel = styled.label`
+  display: flex;
+  white-space: nowrap;
+  background: #585cc6;
+  border-radius: 2px;
+  border: none;
+
+  font-weight: 600;
+  line-height: 18px;
+  color: #ffffff;
+
+  padding: 17px 28px;
+  margin-left: 16px;
+
+  cursor: pointer;
+`;
+
+export const InputFile = styled.input`
+  display: none;
+`;
+
+export const FormFooter = styled.div`
+display: flex;
+align-items: center;
+`
+export const FooterIconWrapper = styled.div`
+  margin-left: 18px;
+  margin-right: 10px;
+`
+
+export const FormFooterText = styled.p`
+  font-family: "Gilroy";
+  font-size: 12px;
+  line-height: 16px;
+  color: #8A8A8A;
 `

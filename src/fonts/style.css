@@ -20,6 +20,13 @@
 }
 
 @font-face {
+    font-family: "Gilroy";
+    src: url("Gilroy-Semibold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "FactorA";
     src: url("FactorA-Bold.ttf");
     font-weight: 700;

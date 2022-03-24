@@ -4,6 +4,7 @@ import Header from "./Header";
 import Body from "./Body";
 import Form from "./Form/Form";
 import { useModalContext } from "../context/ModalContext";
+import MessageSuccess from "./MessageSuccess";
 
 const Global = styled.div`
   position: relative;
@@ -43,6 +44,7 @@ function LandingPage() {
       <MainLayout isModalOpen={isModalOpen}>
         <Header />
         <Body />
+        <MessageSuccess />
         <Footer />
       </MainLayout>
 

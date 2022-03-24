@@ -2,9 +2,10 @@ import SVG from "react-inlinesvg";
 import Cross from "../../img/icons/FormCross.svg";
 import { CustomButton, CrossIcon, ButtonLabel } from "../Button";
 import Plus from "../../img/icons/Cross.svg";
+import Info from "../../img/icons/InfoSquare.svg";
 import { FactorA } from "../FactorA";
 import { useModalContext } from "../../context/ModalContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   FormContainer,
   FormCaption,
@@ -17,6 +18,11 @@ import {
   FormErrorLabel,
   OpinionInput,
   Count,
+  InputLabel,
+  InputFile,
+  FormFooter,
+  FooterIconWrapper,
+  FormFooterText,
 } from "./styled";
 import FileUpload from "../FileUpload";
 
@@ -27,34 +33,35 @@ interface IFormData {
 
 const validator = (formData: IFormData) => {
   const descriptionValidator = () => {
-      if(formData.description.length === 0) return  "это поле обязательное"
-      if(formData.description.length > 200) return "максимум 200 символов"
-      return ""
-  }
+    if (formData.description.length === 0) return "это поле обязательное";
+    if (formData.description.length > 200) return "максимум 200 символов";
+    return "";
+  };
   const nameValidator = () => {
-      if(formData.name.length === 0) return  "это поле обязательное"
-      return ""
-  }
+    if (formData.name.length === 0) return "это поле обязательное";
+    return "";
+  };
 
   return {
     name: nameValidator(),
-    description: descriptionValidator()
+    description: descriptionValidator(),
   };
 };
 
 const DEFAULT_FORM_DATA = {
   name: "",
   description: "",
-}
+};
 
 const Form = () => {
   const { handleClose } = useModalContext();
+  const [isFileLoaded, setIsFileLoaded] = useState(true);
   const [formData, setFormData] = useState<IFormData>(DEFAULT_FORM_DATA);
   const [formError, setFormError] = useState<IFormData>({
     name: "",
     description: "",
   });
-  const [fileName, setFileName] = useState("")
+  const [fileName, setFileName] = useState("");
 
   const handleChange = (e: any) => {
     setFormData((prev) => ({
@@ -74,11 +81,15 @@ const Form = () => {
 
     handleClose();
     alert(`${formData.name} - ${formData.description}`);
-    setFormData(DEFAULT_FORM_DATA)
+    setFormData(DEFAULT_FORM_DATA);
   };
 
   const handleFileLoad = (event: any) => {
     setFileName(event.target.files[0].name);
+    console.log(fileName.length);
+    // if (fileName.length > 0) {
+    //   setIsFileLoaded(true);
+    // }
   };
 
   return (
@@ -107,18 +118,17 @@ const Form = () => {
             )}
           </InputWrapper>
 
-          <CustomButton>
+          <InputLabel>
             <CrossIcon>
               <SVG src={Plus} />
             </CrossIcon>
-          </CustomButton>
+            <InputFile type="file" onChange={handleFileLoad} />
+            <p>Загрузить фото</p>
+          </InputLabel>
         </AutorBody>
+        {isFileLoaded && <FileUpload fileName={fileName} />}
       </Row>
 
-      <input type="file" onChange={handleFileLoad} />
-
-      <FileUpload fileName={fileName} />
-      
       <Row>
         <AutorCaption>Все ли вам понравилось?</AutorCaption>
 
@@ -136,9 +146,20 @@ const Form = () => {
         </InputWrapper>
       </Row>
 
-      <CustomButton>
-        <ButtonLabel>Отправить отзыв</ButtonLabel>
-      </CustomButton>
+      <FormFooter>
+        <CustomButton>
+          <ButtonLabel>Отправить отзыв</ButtonLabel>
+        </CustomButton>
+
+        <FooterIconWrapper>
+          <SVG src={Info} />
+        </FooterIconWrapper>
+
+        <FormFooterText>
+          Все отзывы проходят модерацию в течение 2 часов
+        </FormFooterText>
+      </FormFooter>
+      
     </FormContainer>
   );
 };
